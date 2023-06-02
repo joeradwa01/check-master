@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+<link rel="stylesheet" href="css/homepage.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            margin: 0; /* Remove default body margin */
+        }
+
+        .back-ground {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-ground::before {
+            content: "";
+            background-image: url(pexels-photo-3815738.jpeg);
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1; /* Set the z-index to send it behind the content */
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="nav collapsible ">
+
+        <a class="logo-name" href="/"><img src="icons8-note-48.png" ></a>
+    
+        <a href="#"> <img class="nav--icon" src="picture/icons8-bullet-list-40 (1).png" alt=""></a>
+    
+        <ul class="list nav--list collaspsible-content">
+            <li class="nav--item" ><a href="#">Login</a></li> 
+            <li class="nav--item"><a href="#">Signup</a></li> 
+            <li class="nav--item"><a href="#">Contact us</a></li> 
+            <li class="nav--item"><a href="#">About us</a></li> 
+    
+        </ul>
+    </nav>
+      
+    <div class="back-ground">
+    
+        <div class="my-div">
+<h1 class="name">Sticky Note</h1>
+              
+
+<p class="under-name">
+    At Sticky Note, we understand the importance of effective note-taking in<br>
+     organizing your thoughts, capturing valuable information, and boosting <br>
+     your productivity. Our platform provides a seamless and intuitive <br>
+     note-taking experience that empowers you to stay organized, inspired, and on top of your game.<br>
+     <br>
+
+    With our user-friendly interface and powerful features, you can effortlessly create,<br> 
+    edit, and organize your notes in a way that suits your unique style and workflow. Whether<br> 
+    you're a student, a professional, or simply someone who loves to jot down ideas, our <br>
+     note-taking website is designed to cater to your needs.</p>
+
+
+     <button type="submit" class="btn btn-primary btn-home">Sign Up</button>
+
+                </div>
+    
+     </div>
+
+
+
+</body>
+</html>
