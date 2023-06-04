@@ -4703,7 +4703,21 @@ textarea.form-control
   border: 1px solid rgba(0,0,0,0.125);
   border-radius: 10px;
 }
-
+.card-model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+}
 .card>hr
 {
   margin-right: 0;
@@ -44794,12 +44808,13 @@ table.dataTable,table.dataTable th,table.dataTable td
     padding: 10px;
   
 }
-
+ 
 
 .modal-create {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+   z-index: 9999;
+
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -44842,16 +44857,28 @@ table.dataTable,table.dataTable th,table.dataTable td
   pointer-events: none; /* to prevent mouse events from reaching the content */
 }
 
+.modal-content-stick {
+  position: relative;
+  z-index: 2;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 1rem;
+}
+
+.closemodal {
+  position: absolute;
+  top: -90px;
+  right: -400px;
+  z-index: 99999;
+  cursor: pointer;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
+#stickyNoteFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

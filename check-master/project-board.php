@@ -557,8 +557,8 @@ include('sidenavbar.php');
                   <div class="card-body custom-notes-space">
                     <form method="POST" action="searchBoards.php" >
                     <label for="id">Enter Board Id </label>
-                        <input type="text" placeholder="Enter Board ID" name="id">
-                        <button type="submit">Search</button>
+                    <input class="text search-input" type="text" placeholder="Enter Board ID" name="id">
+                        <button class="btn btn-primary ml-1" type="submit">Search</button>
                         <p class="text-danger"><?php echo $error ?></p>
                     </form>
                      <div class="table-responsive">

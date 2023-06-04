@@ -45,7 +45,7 @@ body {
 }
 
 .card.card-just-text .content {
-    padding: 50px 65px;
+    padding: 50px 50px;
     text-align: center;
 }
 
@@ -93,12 +93,12 @@ h6,
 }
 
 .card .description {
-    font-size: 16px;
+    font-size: 30px;
     color: #66615b;
 }
 
 .content-card {
-    margin-top: 30px;
+    margin-top: 2px;
 }
 
 a:hover,
@@ -189,3 +189,7 @@ a:focus {
     top: 10px;
 }
 
+
+
+
+    

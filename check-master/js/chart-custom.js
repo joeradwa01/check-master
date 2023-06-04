@@ -5014,6 +5014,7 @@ $(function() {
  
 function createNote(boardId) {
     var content = quill.root.innerHTML;
+ 
     const timestamp = Date.now();
     const noteId = `${timestamp}`;
     var note = document.createElement('div');
@@ -5116,7 +5117,7 @@ let currentDate = `${day}-${month}-${year}`;
     });
 
     document.querySelector('#rowdiv').appendChild(note);
-
+ 
     quill.setText('');
      
         $.ajax({
@@ -5130,7 +5131,8 @@ let currentDate = `${day}-${month}-${year}`;
          }
      });
   
- 
+     localStorage.setItem(noteId, content);
+
 }
 
 
@@ -5171,8 +5173,10 @@ if (jQuery("#quill-toolbar").length) {
   var saveBtn = document.getElementById('save');
   saveBtn.addEventListener('click', function() {
     createNote(boardId);
+
   });
-  
+
+    
 }
 
  
@@ -6497,6 +6501,64 @@ document.addEventListener('click', (event) => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+var stckiymodel = document.getElementById("modelsticky");
+
+// Get the button that opens the modal
+var btnsticky = document.getElementById("btn-sticky");
+
+// Get the <span> element that closes the modal
+var closticky = document.getElementsByClassName("closemodal")[0];
+
+// When the user clicks the button, open the modal 
+btnsticky.onclick = function() {
+  stckiymodel.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+closticky.onclick = function() {
+  stckiymodel.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalcreate) {
+    stckiymodel.style.display = "none";
+  }
+} 
+ 
+btnsticky.addEventListener('click', () => {
+  pageContent.classList.add('opaque');
+});
+
+closticky.addEventListener('click', () => {
+  pageContent.classList.remove('opaque');
+  modal.style.display = 'none';
+});
+
+
+document.addEventListener('click', (event) => {
+  if (event.target == modal) {
+    pageContent.classList.remove('opaque');
+    modal.style.display = 'none';
+  }
+});
 
 /*
 
