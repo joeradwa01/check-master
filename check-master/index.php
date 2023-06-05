@@ -24,7 +24,7 @@ if ($conn->connect_error) {
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Sticky Note </title>
+      <title>Sticky Board </title>
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="icons8-note-48.png" />
@@ -410,9 +410,9 @@ if ($conn->connect_error) {
                                   <i class="ri-search-line"></i>
                               </a>
                               <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="h1-dropdownSearch">
-                                  <form action="#" class="searchbox p-2">
+                              <form method="POST" action="searchBoards.php" >
                                       <div class="form-group mb-0 position-relative">
-                                      <input type="text" class="text search-input font-size-12" placeholder="type here to search...">
+                                      <input class="text search-input" type="text" placeholder="Enter Board ID" name="id">
                                       <a href="#" class="search-link"><i class="las la-search"></i></a> 
                                       </div>
                                   </form>
@@ -848,7 +848,7 @@ if ($conn->connect_error) {
     while ($row = $result->fetch_assoc()) {
 
 
-         print  '<div class="col-lg-24 col-md-auto"> <div id="$row["id"]" class="classchange card card-block card-stretch card-height card-bottom-border-info note-detail"> <div class="card-header d-flex justify-content-between pb-1"> <div class="icon iq-icon-box-2 icon-border-info rounded"> <svg width="23" height="23" class="svg-icon" id="iq-main-01" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /> </svg> </div> <div class="card-header-toolbar d-flex align-items-center"> <div class="dropdown"> <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button"> <i class="ri-more-fill"></i> </span> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4"> <a href="#" class="dropdown-item new-note1" data-toggle="modal" data-target="#new-note1"><i class="las la-eye mr-3"> </i>View</a> <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a> <a class="dropdown-item note-close" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a> </div> </div> </div> </div> <div class="card-body rounded"> <div class="media flex-wrap align-items-top"> <h4 class="card-title"><p class="mb-3 card-description short"  id="note1-description" > '. $row['content'] .' </p>  </div> <div class="card-footer"> <div class="d-flex align-items-center justify-content-between note-text note-text-info"> <a href="#" class=""><i class=" "></i> </a>    <a href="#" class=""><i class="las la-calendar mr-2 font-size-20"></i>'. $row['date'] .' </a> </div> </div> </div> </div> </div>';
+         print  '<div class="col-lg-24 col-md-auto"> <div id="$row["id"]" class="classchange card card-block card-stretch card-height card-bottom-border-info note-detail"> <div class="card-header d-flex justify-content-between pb-1"> <div class="icon iq-icon-box-2 icon-border-info rounded"> <svg width="23" height="23" class="svg-icon" id="iq-main-01" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /> </svg> </div> <div class="card-header-toolbar d-flex align-items-center"> <div class="dropdown"> <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button"> <i class="ri-more-fill"></i> </span> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4">  <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a> <a class="dropdown-item note-close" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a> </div> </div> </div> </div> <div class="card-body rounded"> <div class="media flex-wrap align-items-top"> <h4 class="card-title"><p class="mb-3 card-description short"  id="note1-description" > '. $row['content'] .' </p>  </div> <div class="card-footer"> <div class="d-flex align-items-center justify-content-between note-text note-text-info"> <a href="#" class=""><i class=" "></i> </a>    <a href="#" class=""><i class="las la-calendar mr-2 font-size-20"></i>'. $row['date'] .' </a> </div> </div> </div> </div> </div>';
 
  
     }
@@ -965,8 +965,7 @@ if ($conn->connect_error) {
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                    <div class="header-title">
-                                      <h4 class="card-title">NotePlus Color</h4>
-                                   </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="row mt-4">
@@ -1032,7 +1031,8 @@ if ($conn->connect_error) {
                     <div class="row">
                         <div class="col-md-8">
                         <div class="form-group">
-                          </div>
+                          </div> 
+
                           <iframe  src="stickyboard.php" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
 
                           </div>
@@ -1106,7 +1106,7 @@ if ($conn->connect_error) {
                     </ul>
                 </div>
                 <div class="col-lg-6 text-right">
-                    <span class="text-secondary mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">Sticky Note</a>.
+                    <span class="text-secondary mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">StickyBoard</a>.
                 </div>
             </div>
         </div>

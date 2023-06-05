@@ -405,6 +405,7 @@ include('sidenavbar.php');
                                  <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
                                        <form action="#" class="searchbox">
                                           <div class="form-group mb-0 position-relative">
+
                                           <input type="text" class="text search-input font-size-12" placeholder="Find Your Notebook..">
                                           <a href="#" class="search-link"><i class="ri-search-line"></i></a> 
                                           </div>
@@ -555,10 +556,10 @@ include('sidenavbar.php');
             <div class="col-lg-12">
                <div class="card card-block card-stretch card-height note-table">
                   <div class="card-body custom-notes-space">
-                    <form method="POST" action="searchBoards.php" >
-                    <label for="id">Enter Board Id </label>
-                    <input class="text search-input" type="text" placeholder="Enter Board ID" name="id">
-                        <button class="btn btn-primary ml-1" type="submit">Search</button>
+                    
+                  <form method="POST" action="searchBoards.php" >
+                   <input class="text search-input" type="text" placeholder="Enter Board ID" name="id">
+                    <button class="btn btn-primary ml-1" type="submit">Search</button>
                         <p class="text-danger"><?php echo $error ?></p>
                     </form>
                      <div class="table-responsive">
@@ -642,7 +643,7 @@ include('sidenavbar.php');
         </div>
     </div>
       </div>
-    </div>
+    </div> 
     <!-- Wrapper End-->
     <footer class="iq-footer">
         <div class="container-fluid">
@@ -654,7 +655,7 @@ include('sidenavbar.php');
                     </ul>
                 </div>
                 <div class="col-lg-6 text-right">
-                    <span class="text-secondary mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">NotePlus</a>.
+                    <span class="text-secondary mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">StickyBoard</a>.
                 </div>
             </div>
         </div>

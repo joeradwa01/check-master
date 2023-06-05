@@ -15,6 +15,8 @@ if ($conn->connect_error) {
 
       
     $conn->close();
+    include('sidenavbar.php');
+
 }
 
 $boardId = $_GET["id"];
@@ -570,127 +572,7 @@ $boardId = $_GET["id"];
               </nav>
           </div>
       </div>      
-      <div class="iq-sidebar  sidebar-default ">
-          <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-              <a href="..//index.html" class="header-logo">
-                  <img src="icons8-note-48.png" class="img-fluid rounded-normal light-logo" alt="logo"> <h4 class="logo-title ml-3">Sticky Note</h4>
-              </a>
-              <div class="iq-menu-bt-sidebar">
-                  <i class="las la-times wrapper-menu"></i>
-              </div>
-          </div>    
-          <div class="sidebar-caption dropdown">
-              <a href="#" class="iq-user-toggle d-flex align-items-center justify-content-between" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="../assets/images/user/1.jpg" class="img-fluid rounded avatar-50 mr-3" alt="user">
-                  <div class="caption">
-                      <h6 class="mb-0 line-height"><?php echo $row['firstName']; ?> <?php echo $row['lastName']; ?></h6>
-                  </div>
-                  <i class="las la-angle-down"></i>
-              </a>
-              <div class="dropdown-menu w-100 border-0 my-2" aria-labelledby="dropdownMenuButton">
-                
-                   <a class="dropdown-item mb-2" href="user-profile-edit.php">
-                   <a class="dropdown-item mb-2" href="user-profile-edit.php">
-                       <i class="las la-user-edit font-size-20 mr-1"></i>
-                      <span>Edit Profile</span>
-                  </a>
-                
-                
-                  <hr class="my-2">
-                  <a class="dropdown-item" href="auth-sign-in.html">
-                      <i class="las la-sign-out-alt font-size-20 mr-1"></i>
-                      <span>Logout</span>
-                  </a>
-              </div>
-          </div>
-          <div class="data-scrollbar" data-scroll="1">
-              <div class="iq-search-bar device-search mb-3">
-                  <form action="#" class="searchbox">
-                  <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                  <input type="text" class="text search-input" placeholder="Search">
-                  </form>
-              </div>
-              <div class="sidebar-btn dropdown mb-3">
-                  <a href="#"  id="dropdownMenuButton01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary pr-5 position-relative iq-user-toggle d-flex align-items-center justify-content-between" style="height: 40px;"><span  class="btn-title btn-create"><i class="ri-add-line mr-3"></i>Create New</span><span class="note-add-btn" style="height: 40px;"><i class="las la-angle-down"></i></span></a>
-                  <div class="dropdown-menu w-100 border-0 py-3" aria-labelledby="dropdownMenuButton01">
-                      <a    class="dropdown-item mb-2" href="#">
-                          <span id="myBtn"><i  class="ri-sticky-note-line mr-3"></i>Board</span>
-                      </a>
-                      
-                   
-                  </div>
-              </div>
-              
-              <nav class="iq-sidebar-menu">
-                  <ul id="iq-sidebar-toggle" class="iq-menu">
-                      <li class="active">
-                              <a href="index.php" class="svg-icon">
-                                  <i>
-                                      <svg class="svg-icon" id="iq-main-1" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                                      </svg>
-                                  </i>
-                                  <span>Your Notes</span>
-                              </a>
-                          <ul id="index" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          </ul>
-                      </li>
-                      <li class="">
-                          <a href="#notebooks" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
-                              <i>
-                                  <svg width="20" class="svg-icon" id="iq-main-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
-                                  </svg>
-                              </i>
-                              <span>Notebooks</span>
-                              <i class="las la-angle-right iq-arrow-right arrow-active"></i>
-                              <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
-                          </a>
-                          <ul id="notebooks" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                              <li class="">
-                                  <a href="project-board.html" class="svg-icon">
-                                      <i>
-                                          <svg width="20" class="svg-icon" id="iq-main-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                                          </svg>
-                                      </i>
-                                      <span>Your Boards</span>
-                                  </a>
-                              </li>
-                         
-                          </ul>
-                      </li>
-                 
-                      <li class="">
-                          <a href="page-bin.html" class="svg-icon">
-                              <i>
-                                  <svg width="20" class="svg-icon" id="iq-main-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                  </svg>
-                              </i>
-                              <span>Bin</span>
-                          </a>
-                      </li>
-
-                      
-
- 
-                          </ul>
-                      </li>
-                  </ul>
-              </nav>
-
-             
-              
-              <div id="sidebar-bottom" class="position-relative sidebar-bottom">
-                  <div class="card rounded shadow-none">
-                         
-                      </div>
-                  </div>
-              </div>
-              <div class="p-3"></div>
-          </div>
-      </div>     
+    
       
       
       
@@ -929,15 +811,9 @@ $boardId = $_GET["id"];
                                 <a class="nav-link home active show" data-toggle="pill" data-init="note" href="#note1" role="tab" aria-selected="false">All</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link home" data-toggle="pill" data-init="shared-note" href="#note2" role="tab" aria-selected="true">Shared Notes</a>
+                                <a class="nav-link home" data-toggle="pill"  id="btn-sticky"  data-init="shared-note" href="#note2" role="tab" aria-selected="true">sticky Board</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link home" data-toggle="pill" data-init="pin-note" href="#note3" role="tab" aria-selected="false">Pin Notes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link home" data-toggle="pill" data-init="fav-note" href="#note4" role="tab" aria-selected="false">Favourite Notes</a>
-                            </li>
-                        </ul> 
+                       
                           </div>
 
                        
@@ -953,7 +829,7 @@ $boardId = $_GET["id"];
 
                          
 <div class="row" id="rowdiv">
-     
+      
      
 <?php
 // Database connection
@@ -970,13 +846,11 @@ if ($conn->connect_error) {
 
    
 
-
-
      // Display each note on the page
     while ($row = $result->fetch_assoc()) {
 
 
-         print  '<div class="col-lg-24 col-md-auto"> <div id="${noteId}-detail" class="classchange card card-block card-stretch card-height card-bottom-border-info note-detail"> <div class="card-header d-flex justify-content-between pb-1"> <div class="icon iq-icon-box-2 icon-border-info rounded"> <svg width="23" height="23" class="svg-icon" id="iq-main-01" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /> </svg> </div> <div class="card-header-toolbar d-flex align-items-center"> <div class="dropdown"> <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button"> <i class="ri-more-fill"></i> </span> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4"> <a href="#" class="dropdown-item new-note1" data-toggle="modal" data-target="#new-note1"><i class="las la-eye mr-3"> </i>View</a> <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a> <a class="dropdown-item note-close" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a> </div> </div> </div> </div> <div class="card-body rounded"> <div class="media flex-wrap align-items-top"> <h4 class="card-title"><p class="mb-3 card-description short"  id="note1-description" > '. $row['content'] .' </p>  </div> <div class="card-footer"> <div class="d-flex align-items-center justify-content-between note-text note-text-info">'. $row['email'] .'   <a href="#" class=""><i class=" "></i> </a>    <a href="#" class=""><i class="las la-calendar mr-2 font-size-20"></i>'. $row['date'] .' </a> </div> </div> </div> </div> </div>';
+         print  '<div class="col-lg-24 col-md-auto"> <div id="${noteId}-detail" class="classchange card card-block card-stretch card-height card-bottom-border-info note-detail"> <div class="card-header d-flex justify-content-between pb-1"> <div class="icon iq-icon-box-2 icon-border-info rounded"> <svg width="23" height="23" class="svg-icon" id="iq-main-01" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /> </svg> </div> <div class="card-header-toolbar d-flex align-items-center"> <div class="dropdown"> <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button"> <i class="ri-more-fill"></i> </span> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4"> <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a> <a class="dropdown-item note-close" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a> </div> </div> </div> </div> <div class="card-body rounded"> <div class="media flex-wrap align-items-top"> <h4 class="card-title"><p class="mb-3 card-description short"  id="note1-description" > '. $row['content'] .' </p>  </div> <div class="card-footer"> <div class="d-flex align-items-center justify-content-between note-text note-text-info">'. $row['email'] .'   <a href="#" class=""><i class=" "></i> </a>    <a href="#" class=""><i class="las la-calendar mr-2 font-size-20"></i>'. $row['date'] .' </a> </div> </div> </div> </div> </div>';
 
  
     }
@@ -1002,6 +876,24 @@ if ($conn->connect_error) {
  
 
 
+    <?php
+// Database connection
+$conn = new mysqli('localhost', 'root', '', 'home');
+if ($conn->connect_error) {
+    echo "$conn->connect_error";
+    die("Connection Failed : " . $conn->connect_error);
+} else {
+    // Retrieve the user's notes
+    $email = $_SESSION['email'];
+    
+    $sql = "SELECT * FROM board where email = '$email'";
+    $result = $conn->query($sql);
+
+   
+
+    $conn->close();
+}
+?>  
    
  <!-- Modal Edit -->
  <div class="modal fade" id="edit-note1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -1148,6 +1040,31 @@ if ($conn->connect_error) {
 
 
 
+    <div id="modelsticky" class="modal-create ">
+
+    <!-- Modal content -->
+    <div class="modal-content-stick">
+      <span class="closemodal">&times;</span>
+      <div class="row">
+        <div class="col-lg-12">                
+            <div class="card-model  card-block card-stretch pb-2">
+                <div class="card-body write-card pb-4">
+                    <div class="row">
+                        <div class="col-md-8">
+                        <div class="form-group">
+                          </div> 
+                          
+                          <iframe  src="stickyboard1.php" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+
+                          </div>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
     
  
 <!-- The Modal -->

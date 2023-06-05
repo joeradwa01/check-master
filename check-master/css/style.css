@@ -8665,6 +8665,8 @@ a.bg-purple:hover,a.bg-purple:focus,button.bg-purple:hover,button.bg-purple:focu
 .mb-0,.my-0
 {
   margin-bottom: 0 !important;
+  margin-left: 20px !important;
+
 }
 
 .ml-0,.mx-0
@@ -11412,9 +11414,9 @@ a.text-purple:hover,a.text-purple:focus
 .card-header-toolbar .dropdown-toggle i
 {
   font-size: 20px;
+
   line-height: normal;
-  vertical-align: text-bottom;
-}
+ }
 
 .card-header-toolbar .dropdown-toggle::after
 {
@@ -11878,12 +11880,26 @@ a.text-purple:hover,a.text-purple:focus
   border: unset;
   background-color: #f3f6fd;
 }
+.search-input
+{
+  width: 20%;
+  height: 40px;
+  padding: 5px 10px 5px 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  border: 0px solid #DCDDDF;
+  background-color: #f3f6fd;
+}
 
 .iq-sidebar .iq-search-bar .search-link
 {
   position: absolute;
   left: 10px;
   top: 6px;
+
 }
 
 .sidebar-default .iq-sidebar-menu .iq-menu li a

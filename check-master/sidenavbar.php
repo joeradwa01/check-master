@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Sticky Note </title>
+      <title>Sticky Board </title>
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="icons8-note-48.png" />
@@ -31,8 +31,8 @@
     <body>
     <div class="iq-sidebar  sidebar-default ">
           <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-              <a href="..//index.html" class="header-logo">
-                  <img src="icons8-note-48.png" class="img-fluid rounded-normal light-logo" alt="logo"> <h4 class="logo-title ml-3">Sticky Note</h4>
+              <a href="index.php" class="header-logo">
+                  <img src="icons8-note-48.png" class="img-fluid rounded-normal light-logo" alt="logo"> <h4 class="logo-title ml-3">Sticky Board</h4>
               </a>
               <div class="iq-menu-bt-sidebar">
                   <i class="las la-times wrapper-menu"></i>
@@ -42,8 +42,10 @@
               <a href="#" class="iq-user-toggle d-flex align-items-center justify-content-between" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img src="../assets/images/user/1.jpg" class="img-fluid rounded avatar-50 mr-3" alt="user">
                   <div class="caption">
-                      <h6 class="mb-0 line-height"><?php echo $row['firstName']; ?> <?php echo $row['lastName']; ?></h6>
-                  </div>
+                    
+                  <h5 class="mb-0 line-height"><?php echo $row['firstName']; ?> <?php echo $row['lastName']; ?></h5>
+                  
+                </div>
                   <i class="las la-angle-down"></i>
               </a>
               <div class="dropdown-menu w-100 border-0 my-2" aria-labelledby="dropdownMenuButton">
@@ -62,11 +64,13 @@
                   </a>
               </div>
           </div>
+          
           <div class="data-scrollbar" data-scroll="1">
               <div class="iq-search-bar device-search mb-3">
-                  <form action="#" class="searchbox">
+
+                  <form method="POST" action="searchBoards.php" class="searchbox">
                   <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                  <input type="text" class="text search-input" placeholder="Search">
+                  <input class="text search-input" type="text" placeholder="Enter Board ID" name="id">
                   </form>
               </div>
               <div class="sidebar-btn dropdown mb-3">
@@ -121,7 +125,7 @@
                       </li>
                  
                       <li class="">
-                          <a href="page-bin.html" class="svg-icon">
+                          <a href="page-bin.php" class="svg-icon">
                               <i>
                                   <svg width="20" class="svg-icon" id="iq-main-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
