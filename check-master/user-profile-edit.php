@@ -546,7 +546,7 @@ if ($conn->connect_error) {
                                 <a href="#" class="iq-sub-card">
                                     <div class="media align-items-center cust-card py-3 border-bottom">
                                         <div class="">
-                                            <img class="avatar-50 rounded-small" src="1.jpg" alt="01">
+                                            <img class="avatar-50 rounded-small" src="user.jpg" alt="01">
                                         </div>
                                         <div class="media-body ml-3">
                                             <div class="d-flex align-items-center justify-content-between">
@@ -610,7 +610,7 @@ if ($conn->connect_error) {
                                 <a href="#" class="iq-sub-card">
                                     <div class="media align-items-center cust-card py-3 border-bottom">
                                         <div class="">
-                                            <img class="avatar-50 rounded-small" src="../assets/images/user/01.jpg" alt="01">
+                                            <img class="avatar-50 rounded-small" src="user.jpg" alt="01">
                                         </div>
                                         <div class="media-body ml-3">
                                             <div class="d-flex align-items-center justify-content-between">
@@ -713,7 +713,7 @@ if ($conn->connect_error) {
                                 <a href="#" class="iq-sub-card">
                                     <div class="media align-items-center cust-card pb-3 border-bottom">
                                         <div class="">
-                                            <img class="avatar-50 rounded-small" src="../assets/images/user/01.jpg" alt="01">
+                                            <img class="avatar-50 rounded-small" src="user.jpg" alt="01">
                                         </div>
                                         <div class="media-body ml-3">
                                             <div class="d-flex align-items-center justify-content-between">
@@ -777,7 +777,7 @@ if ($conn->connect_error) {
                                 <a href="#" class="iq-sub-card">
                                     <div class="media align-items-center cust-card pb-3 border-bottom">
                                         <div class="">
-                                            <img class="avatar-50 rounded-small" src="../assets/images/user/01.jpg" alt="01">
+                                            <img class="avatar-50 rounded-small" src="user.jpg" alt="01">
                                         </div>
                                         <div class="media-body ml-3">
                                             <div class="d-flex align-items-center justify-content-between">
@@ -871,7 +871,7 @@ if ($conn->connect_error) {
                     <div class="col-md-12">
                         <div class="profile-img-edit">
                             <div class="crm-profile-img-edit">
-                                <img class="crm-profile-pic avatar-100" src=" "alt="profile-pic">
+                                <img class="crm-profile-pic avatar-100" src="user.jpg"alt="profile-pic">
                                 <div class="crm-p-image bg-primary">
                                 <i class="las la-pen upload-button"></i>
                                 

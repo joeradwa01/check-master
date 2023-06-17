@@ -12,6 +12,7 @@ if ($conn->connect_error) {
     $row = $result->fetch_assoc();
     $conn->close();
 }
+
 $boardId = $_GET["id"];
 
 ?>
@@ -238,7 +239,7 @@ if ($conn->connect_error) {
 } else {
     // Retrieve the user's notes
     $email = $_SESSION['email'];
-    $sql = "SELECT * FROM notesboard WHERE email = '$email' and boardID " ;
+    $sql = "SELECT * FROM notesboard WHERE  boardID=$boardId " ;
     $result = $conn->query($sql);
     
     // Initialize note counter
@@ -249,13 +250,18 @@ if ($conn->connect_error) {
 
     // Display each note on the page
     while ($row = $result->fetch_assoc()) {
-        $noteCount++;
+        $formEmail = $row['email'];        
+        $sql3 = "SELECT * FROM form WHERE email = '$formEmail'";
+        $result3 = $conn->query($sql3);
+        $row2 = $result3->fetch_assoc();
+     $noteCount++;
         $noteId = 'note-' . $noteCount; // Unique ID for each note
         echo '
             <div class="col-md-4 col-sm-6 content-card">
                 <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="blue" data-note-id="'.$noteId.'">
-                        <button class="button" id="colorButton-'.$noteId.'"><img src="icons8-color-30.png" alt=""></button>
+                <div class="card card-just-text" data-background="color" data-color="blue" data-note-id="'.$noteId.'">
+
+                <button class="button" id="colorButton-'.$noteId.'"><img src="icons8-color-30.png" alt=""></button>
                         <div class="content">
                             <p class="description">'. $row['content'] .'</p>
                         </div>

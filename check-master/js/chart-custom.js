@@ -5016,7 +5016,7 @@ function createNote(boardId) {
     var content = quill.root.innerHTML;
  
     const timestamp = Date.now();
-    const noteId = `${timestamp}`;
+    const noteId = 2147483647;
     var note = document.createElement('div');
      note.classList.add('note');
    
@@ -5110,7 +5110,26 @@ let currentDate = `${day}-${month}-${year}`;
             }
         });  
  
-     
+        $.ajax({
+          type: "POST",
+          url: "delete_note.php",
+          data: { noteId: noteId },
+          success: function(data) {
+              console.log(data);
+              // If the deletion is successful, remove the note from the DOM
+              if (closestElem == '.card') {
+                  $(this).closest(closestElem).parent().remove();
+              } else {
+                  $(this).closest(closestElem).remove();
+              }
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+              // Display the error message in an alert or console
+              var errorMessage = xhr.responseText;
+              console.log(errorMessage);
+          }
+      });
   
 
     });
@@ -5130,8 +5149,7 @@ let currentDate = `${day}-${month}-${year}`;
          }
      });
   
-     localStorage.setItem(noteId, content);
-
+ 
 }
 
 

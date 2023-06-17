@@ -16,10 +16,12 @@ if ($conn->connect_error) {
       
     $conn->close();
     include('sidenavbar.php');
-
+ 
 }
 
+
 $boardId = $_GET["id"];
+
 ?>  
 <!doctype html>
 <html lang="en">
@@ -57,6 +59,7 @@ $boardId = $_GET["id"];
         </div>
   </div>
     <div class="page-content">
+ 
  
     <div class="right-sidebar-mini right-sidebar">
       <div class="right-sidebar-panel p-0">
@@ -802,12 +805,13 @@ $boardId = $_GET["id"];
             <div class="card-body custom-notes-space">
                 <h3 class="">Your Notes</h3>
                 <div class="iq-tab-content">
-
-                    
+ 
                     
                     <div class="d-flex flex-wrap align-items-top justify-content-between">
-                        <ul class="d-flex nav nav-pills text-center note-tab mb-3" id="note-pills-tab" role="tablist">                                
-                            <li class="nav-item">
+ 
+                    <ul class="d-flex nav nav-pills text-center note-tab mb-3" id="note-pills-tab" role="tablist">                                
+ 
+                    <li class="nav-item">
                                 <a class="nav-link home active show" data-toggle="pill" data-init="note" href="#note1" role="tab" aria-selected="false">All</a>
                             </li>
                             <li class="nav-item">
@@ -816,6 +820,16 @@ $boardId = $_GET["id"];
                        
                           </div>
 
+                          <div class="inforamtion">
+        <div class="info-box">
+             <div class="info-label">Board Name:</div>
+            <div class="info-value">name</div>
+            <div class="info-label">Board ID:</div>
+            <div class="info-value">1</div>
+            <div class="info-label">Creator:</div>
+            <div class="info-value">joe</div>
+        </div>
+    </div>
                        
                           
 
@@ -829,7 +843,7 @@ $boardId = $_GET["id"];
 
                          
 <div class="row" id="rowdiv">
-      
+
      
 <?php
 // Database connection
@@ -841,22 +855,26 @@ if ($conn->connect_error) {
     // Retrieve the user's notes
     $email = $_SESSION['email'];
     
-    $sql = "SELECT * FROM notesboard WHERE boardID = '$boardId' AND email = '$email'";
+    $sql = "SELECT * FROM notesboard WHERE boardID = '$boardId' ";
     $result = $conn->query($sql);
 
-   
+    
 
      // Display each note on the page
     while ($row = $result->fetch_assoc()) {
+    $formEmail = $row['email'];        
+    $sql3 = "SELECT * FROM form WHERE email = '$formEmail'";
+    $result3 = $conn->query($sql3);
+    $row2 = $result3->fetch_assoc();
 
+         print  '<div class="col-lg-24 col-md-auto"> <div id="${noteId}-detail" class="classchange card card-block card-stretch card-height card-bottom-border-info note-detail"> <div class="card-header d-flex justify-content-between pb-1"> <div class="icon iq-icon-box-2 icon-border-info rounded"> <svg width="23" height="23" class="svg-icon" id="iq-main-01" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /> </svg> </div> <div class="card-header-toolbar d-flex align-items-center"> <div class="dropdown"> <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button"> <i class="ri-more-fill"></i> </span> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4"> <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a> <a class="dropdown-item note-close" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a> </div> </div> </div> </div> <div class="card-body rounded"> <div class="media flex-wrap align-items-top"> <h4 class="card-title"><p class="mb-3 card-description short"  id="note1-description" > '. $row['content'] .' </p>  </div> <div class="card-footer"> <div class="d-flex align-items-center justify-content-between note-text note-text-info"> <p class="uname">"'. $row2['firstName'].'"</p>   <a href="#" class=""><i class=" "></i> </a>    <a href="#" class=""><i class="las la-calendar mr-2 font-size-20"></i>'. $row['date'] .' </a> </div> </div> </div> </div> </div>';
 
-         print  '<div class="col-lg-24 col-md-auto"> <div id="${noteId}-detail" class="classchange card card-block card-stretch card-height card-bottom-border-info note-detail"> <div class="card-header d-flex justify-content-between pb-1"> <div class="icon iq-icon-box-2 icon-border-info rounded"> <svg width="23" height="23" class="svg-icon" id="iq-main-01" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /> </svg> </div> <div class="card-header-toolbar d-flex align-items-center"> <div class="dropdown"> <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button"> <i class="ri-more-fill"></i> </span> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4"> <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a> <a class="dropdown-item note-close" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a> </div> </div> </div> </div> <div class="card-body rounded"> <div class="media flex-wrap align-items-top"> <h4 class="card-title"><p class="mb-3 card-description short"  id="note1-description" > '. $row['content'] .' </p>  </div> <div class="card-footer"> <div class="d-flex align-items-center justify-content-between note-text note-text-info">'. $row['email'] .'   <a href="#" class=""><i class=" "></i> </a>    <a href="#" class=""><i class="las la-calendar mr-2 font-size-20"></i>'. $row['date'] .' </a> </div> </div> </div> </div> </div>';
-
- 
+                
     }
     
  
     $conn->close();
+
 }
 ?>  
 <div  id="savenote" class="savenote" >
@@ -1054,7 +1072,7 @@ if ($conn->connect_error) {
                         <div class="form-group">
                           </div> 
                           
-                          <iframe  src="stickyboard1.php" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+                          <iframe  src="stickyboard1.php?id=<?php echo $boardId; ?>" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
 
                           </div>
  

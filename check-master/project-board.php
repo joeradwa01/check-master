@@ -579,6 +579,7 @@ include('sidenavbar.php');
                               <td><?php echo $b['id'] ?></td>
                                 <td> <a href="noteBoard.php?id=<?php echo $b['id'] ?>"><?php  echo $b['BoardName']; ?> </a></td>
                                  <td>
+                                        
                                     <div>
                                         <input type="hidden" name="boardid" value="<?php echo $b['id'] ?>">
                                         <a id="editBoard"  href="#" class="badge badge-success mr-3 edit-note" data-toggle="modal" data-target="#edit-note"><i class="las la-pen mr-0"></i></a>

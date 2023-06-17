@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Sticky Board </title>
 
       <!-- Favicon -->
       <link rel="shortcut icon" href="icons8-note-48.png" />
       <link rel="stylesheet" href="css/style.css">
-      
-      <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+       <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
       <link rel="stylesheet" href="../assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
       <link rel="stylesheet" href="../assets/vendor/remixicon/fonts/remixicon.css">
       <link rel="stylesheet" href="../assets/vendor/@icon/dripicons/dripicons.css">
@@ -41,6 +41,85 @@
       left: 0px;
       opacity: 0.75;
 }
+.nav {
+    background: #090f11;  
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    align-items: center;
+    opacity: .8;
+  }
+  
+  
+  .nav--item {
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .nav--item > a {
+    color: #fff;
+    padding:15px;
+    text-decoration:none;
+  }
+  
+  .nav--item> a:hover {
+   background-color: #87d8f0;
+  }
+  
+  .nav--icon {
+    opacity: 0.8;
+  }
+  
+  .nav--icon:hover {
+    opacity: 1;
+    color: #333;
+  }
+  
+  @media screen and ( min-width: 768px) 
+  {
+    .nav--icon{
+        display: none;
+    }
+  
+    nav {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+  
+    }
+    nav li {
+        text-decoration: none;
+      }
+      nav li a {
+        text-decoration: none;
+      }
+    .nav--list {
+        width: auto;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+  
+  
+    }
+   
+    .nav--item{
+    justify-content: space-between; 
+    margin: 10px 5px;
+    list-style: none;
+    border-bottom: 0;
+        font-size: 1rem;
+    
+   }
+
+  }
+  .logo-name{
+  position:absolute;
+}
+
    </style>
    
    </head>
@@ -48,7 +127,21 @@
    
    
    <div class="back-ground" >
-
+   <nav class="nav collapsible ">
+    <h3 style="color:white;padding-left:2em;">Sticky Board</h3>
+            <a class="logo-name" href="#"><img src="icons8-note-48.png" ></a>
+        
+            <a href="#"> <img class="nav--icon" src="picture/icons8-bullet-list-40 (1).png" alt=""></a>
+        
+            <ul class="list nav--list collaspsible-content">
+              <li class="nav--item"><a href="home_page.html">Home</a></li> 
+              <li class="nav--item"><a href="auth-sign-up.html">Sign Up</a></li> 
+                <li class="nav--item" ><a href="auth-sign-in.php">Login</a></li> 
+                <li class="nav--item"><a href="contact us.html">Contact us</a></li> 
+                <li class="nav--item"><a href="About.html">About us</a></li> 
+        
+            </ul>
+        </nav>
     <!-- loader END -->
     
       <div class="wrapper">
@@ -58,7 +151,7 @@
                <div class="col-md-5 col-sm-12 col-12 align-self-center">
                   <div class="sign-user_card">   
                      <div class="logo-detail">            
-                           <div class="d-flex align-items-center"><img src="icons8-note-48.png" class="img-fluid rounded-normal light-logo logo" alt="logo"> <h4 class="logo-title ml-3">Sticky Board</h4></div>
+                     <a href="home_page.html">      <div class="d-flex align-items-center"><img src="icons8-note-48.png" class="img-fluid rounded-normal light-logo logo" alt="logo"> <h4 class="logo-title ml-3">Sticky Board</h4></div></a>
                      </div>      
                      <h3 class="mb-2">Sign In</h3>
                      <p>Welcome back</p>  
